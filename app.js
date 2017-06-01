@@ -37,28 +37,28 @@ angular.module('tutorialApp', ['ngAnimate', 'ngRoute'])
       }
     };
   })
-  .factory('Sortieren', function(){
-    return{
-        sortiere : function(zusortieren){
-          // this.heroes = this.heroes.reverse();
-          // this.heroes = this.heroes.filter(h => h === this.heroes[0]);
-          if(zusortieren === 'nameArt'){
-              this.articles = this.articles.sort((hero1, hero2) => {
-              if(hero1.name > hero2.name) return 1;
-              if(hero1.name < hero2.name) return -1;
-              return 0;
-            });
-          }
-          if(zusortieren === 'nameDri'){
-              this.drinks = this.drinks.sort((hero1, hero2) => {
-              if(hero1.name > hero2.name) return 1;
-              if(hero1.name < hero2.name) return -1;
-              return 0;
-            });
-          }  
-        }
-  }
-  })
+  // .factory('Sortieren', function(){
+  //   return{
+  //       sortiere : function(zusortieren){
+  //         // this.heroes = this.heroes.reverse();
+  //         // this.heroes = this.heroes.filter(h => h === this.heroes[0]);
+  //         if(zusortieren === 'nameArt'){
+  //             this.articles = this.articles.sort((hero1, hero2) => {
+  //             if(hero1.name > hero2.name) return 1;
+  //             if(hero1.name < hero2.name) return -1;
+  //             return 0;
+  //           });
+  //         }
+  //         if(zusortieren === 'nameDri'){
+  //             this.drinks = this.drinks.sort((hero1, hero2) => {
+  //             if(hero1.name > hero2.name) return 1;
+  //             if(hero1.name < hero2.name) return -1;
+  //             return 0;
+  //           });
+  //         }  
+  //       }
+  // }
+  // })
   .controller('ArticlesCtrl', function($scope, $http, Cart){
     $scope.cart = Cart;
     $http.get('articles.json').then(function(articlesResponse) {
