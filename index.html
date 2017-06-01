@@ -1,0 +1,45 @@
+<html ng-app="tutorialApp">
+<head>
+  <meta charset="utf8" />
+  <title>AngularJS Tutorial</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <p class="well">
+      <a href="#/">Willkommen</a> | <a href="#/articles">Speisen</a> | <a href="#/drinks">Getränke</a>
+    </p>
+    <div ng-view></div>
+
+<div ng-controller="CartCtrl">
+  <div ng-hide="cart.getItems().length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
+  <table ng-show="cart.getItems().length" class="table alert-info">
+    <tr>
+      <td colspan="3"style="background-color: #fdd;">Ihr Warenkorb:</td>
+    </tr>
+    <tr ng-repeat="item in cart.getItems() track by
+        $index" class="cart-item">
+      <td>{{item.name}}</td>
+      <td>{{item.price | currency}}</td>
+      <td><a href class="btn btn-default btn-sm" ng-click="cart.removeArticle(item);">Entfernen</a></td>
+    </tr>
+    <tr>
+      <td>{{cart.getItems().length}} Artikel</td>
+      <td>{{cart.sum() | currency}}</td>
+      <td><a href class="btn btn-default btn-sm">Zur Kasse</a></td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

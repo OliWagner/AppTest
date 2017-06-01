@@ -1,0 +1,10 @@
+[
+  {"id": "1", "name": "Pizza Vegetaria", "price": 5, "imageUrl": "img/01.jpg"},
+  {"id": "2", "name": "Pizza Salami",    "price": 5.5, "imageUrl": "img/02.jpg" },
+  {"id": "3", "name": "Pizza Thunfisch", "price": 6, "imageUrl": "img/03.jpg" },
+  {"id": "4", "name": "Aktueller Flyer", "price": 0, "imageUrl": "img/04.jpg" },
+  {"id": "5", "name": "Pizza Margharita", "price": 4, "imageUrl": "img/05.jpg" },
+  {"id": "6", "name": "Lasagne",    "price": 5.2, "imageUrl": "img/06.jpg" },
+  {"id": "7", "name": "Canneloni", "price": 6.1, "imageUrl": "img/07.jpg" },
+  {"id": "8", "name": "Salat", "price": 4.3, "imageUrl": "img/08.jpg" }
+]

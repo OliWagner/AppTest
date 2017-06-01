@@ -1,0 +1,23 @@
+<form>
+  <input type="text" ng-model="search">
+  <p ng-show="search">Du suchst gerade nach: {{search}}</p>
+</form>
+
+<table class="table" ng-controller="ArticlesCtrl">
+  <tr>
+    <td></td>
+    <td><button ng-click="Sortieren.sortiere('nameArt');">Sortieren</button></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  
+  <tr ng-repeat="article in articles | filter:search | orderBy:'price'">
+    <td>{{article.id}}</td>
+    <td>{{article.name}}</td>
+    <td><price value="article.price" /></td>
+    <td><img ng-src="{{article.imageUrl}}" /></td>
+    <td><a href class="btn btn-default btn-sm" ng-click="cart.addArticle(article);">Hinzufügen</a></td>
+  </tr>
+</table>
+
